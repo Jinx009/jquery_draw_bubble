@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="inital-scale=1.0" />
+<title>叹嘻之墙</title>
+<link rel="stylesheet" type="text/css" href="css/bubble.css" />
+<script type="text/javascript" src="js/pagesize.640.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/raphael.js"></script>
+<script type="text/javascript">
+var dataJson  = [{"address":"上海","content":"OOXX","contentType":"self","create_date":"2014-09-15T14:28:47+08:00","id":"8ad681f24877fd7a014877fd9f370009","ip":"10.86.1.114"},{"content":"原有数据0X0"},{"content":"原有数据1X0"},{"content":"原有数据2X0"},{"content":"原有数据3X0"},{"content":"原有数据4X0"},{"content":"原有数据5X0"},{"content":"原有数据6X0"},{"content":"原有数据7X0"},{"content":"原有数据8X0"},{"content":"原有数据9X0"},{"content":"原有数据10X0"},{"content":"原有数据11X0"},{"content":"原有数据12X0"},{"content":"原有数据13X0"},{"content":"原有数据14X0"},{"content":"原有数据15X0"},{"content":"原有数据16X0"},{"content":"原有数据17X0"},{"content":"原有数据18X0"},{"content":"原有数据19X0"},{"content":"原有数据20X0"},{"content":"原有数据21X0"},{"content":"原有数据22X0"},{"content":"原有数据23X0"},{"content":"原有数据24X0"},{"content":"原有数据25X0"},{"content":"原有数据26X0"},{"content":"原有数据27X0"},{"content":"原有数据28X0"},{"content":"原有数据29X0"}];
+function getText(content)
+{
+	var length = content.length;
+	var content_array = content.split("");
+	
+	var content_info = "";
+	for(var i = 0;i<6;i++)
+	{
+		if(content_array[i]!=null)
+		{
+			content_info += content_array[i];
+		}
+	}
+	//超出6个字加省略号
+	if(length>6)
+	{
+		return content_info+".";
+	}
+	else
+	{
+		return content_info;
+	}
+}
+
+$(function()
+{
+	
+	var htmlStr = "";
+	for(var i = 0 ;i<dataJson.length;i++)
+	{
+		
+		htmlStr += "<div id=div"+i+" class = 'div_style' style= left:"+getLeft()+"px onclick=javascript:showText('"+dataJson[i].content+"') >"+
+		"<p class='p_style' >"+getText(dataJson[i].content)+"</p></div>";
+	}
+	$("#content").append(htmlStr);
+	
+	var imageHtml = "<div class='img'  ><img src=images/tantan.png width=100%  ></div>";
+	$("#content").append(imageHtml)
+	
+	
+	showDiv();
+	window.setTimeout(function()
+	{
+		$("#divxx").css("display","none");
+		$("#first").css("display","block");
+	},5000);
+})
+function showText(text)
+{
+	$("#text").stop();
+	$("#text").show();
+	$("#text").html("<table><tr style=height:50px ></tr><tr ><td style=height:200px;width:640px; valign=top >&nbsp;&nbsp;"+text+"</td></tr><tr style=height:50px ></tr>");
+	$("#text").animate({top:"0px"},1000);	
+	$("#text").animate({top:"-300px"},3000);	
+}
+var start_time = "ready";
+var index = -1;
+function showDiv()
+{
+	if("ready"==start_time)
+	{
+		start_time = "off";
+		window.setInterval("showAnimate()",getTime());
+	}
+}
+function showAnimate()
+{
+	index ++;
+	var num = index;
+	if(num==dataJson.length)
+	{
+		num = 0;
+		index = -1;
+	}
+	
+	$("#div"+num).css("display","block");
+	$("#div"+num).animate({top:"-291px",left:getLeft()},10000,end);		
+}
+var end = function()
+{
+	$("#"+this.id).css({"display":"none","top":"1110px","left":getLeft()});
+}
+function getLeft()
+{
+	return parseInt(340*Math.random());	
+}
+var type = "loadx"
+function getTime()
+{
+
+	return parseInt(800*Math.random()+3000);	
+
+}
+
+</script>
+</head>
+<body>
+	<div id="divxx"
+		style="position: absolute; width: 640px; color: white; background: black; height: 1010px">
+		<img alt="" src="images/loading.gif" width="100%"
+			style="margin-top: 200px">
+	</div>
+	<div id="first" style="display: none">
+		<div id="text" style="display: none; top: -300px"></div>
+		<div id="content"></div>
+
+	</div>
+	
+	<div id="svg" style="display: none">
+		<img alt="" src="images/little.gif" width="100%">
+	</div>
+	<div id="end" style="display: none">
+		<img alt="" src="images/end.gif" width="100%">
+	</div>
+</body>
+</html>

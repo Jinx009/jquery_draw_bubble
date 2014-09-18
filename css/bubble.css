@@ -1,0 +1,206 @@
+body
+{
+	width:640px;
+	height:1010px;
+	margin:0px;
+    padding:0px;
+    overflow:hidden;
+}
+#content
+{
+	background:url("../images/bg.jpg");
+	width:640px;
+	height:1010px;
+	position: absolute;
+	overflow:hidden;
+}
+.div_style
+{
+	background:url('../images/pao.png');
+	width:300px;
+	height:291px;
+	top:1110px;
+	display:none;
+	position:absolute; 
+	text-align: center;
+	z-index: 555;
+	font-family:"Î¢ÈíÑÅºÚ";
+}
+.p_style
+{
+	font-family:"Î¢ÈíÑÅºÚ";
+	font-size: 32px;
+	margin-top:120px;
+	color:white;
+}
+#text
+{
+	width: 640px;
+	height: 200px;
+	background: black;
+	color: white;
+	font-family:"Î¢ÈíÑÅºÚ";
+	text-indent:2em;
+	position:absolute; 
+	z-index:99999;
+	letter-spacing: 3px;
+	opacity:0.7;  
+	font-size: 36px;
+}
+.img
+{
+	top:780px;
+	width: 400px;
+	position:absolute;
+	left:120px;
+	z-index: 99999;
+}
+#second
+{
+	background: url('../images/bg2.jpg');
+	width: 640px;
+	height: 1010px;
+	position: absolute;
+}
+#info1
+{
+	position: absolute;
+	top:180px;
+	left: 210px;
+	height: 100px;
+}
+#info2
+{
+	position: absolute;
+	top:283px;
+	left: 138px;
+	height: 100px;
+}
+#info3
+{
+	position: absolute;
+	top:386px;
+	left: 252px;
+	height: 100px;
+}
+#info4
+{
+	position: absolute;
+	top:489px;
+	left: 195px;
+	height: 100px;
+}
+#info5
+{
+	position: absolute;
+	top:589px;
+	left: 57px;
+	height: 100px;
+}
+#info6
+{
+	position: absolute;
+	top:689px;
+	left: 280px;
+	height: 100px;
+}
+.local
+{
+	font-size: 36px;
+	font-family:"Î¢ÈíÑÅºÚ";	
+}
+#local1
+{
+	position: absolute;
+	top:210px;
+	left: 260px;
+	color:white;
+}
+#local2
+{
+	position: absolute;
+	top:313px;
+	left: 188px;
+	color:white;
+}
+#local3
+{
+	position: absolute;
+	top:416px;
+	left: 302px;
+	color:white;
+}
+#local4
+{
+	position: absolute;
+	top:519px;
+	left: 245px;
+	color:white;
+}
+#local5
+{
+	position: absolute;
+	top:619px;
+	left: 107px;
+	color:white;
+}
+#local6
+{
+	position: absolute;
+	top:719px;
+	left: 330px;
+	color:white;
+}
+.change
+{
+	position: absolute;
+	top:0px;
+	left: 470px;
+	width: 180px;
+	z-index: 9999999999;
+}
+.xxx
+{
+	position: absolute;
+	top:860px;
+	left: 90px;
+	width: 460px;
+}
+#in
+{
+	position: absolute;
+	top:884px;
+	left: 106px;
+	width: 320px;
+	background: rgb(25,10,8);
+	height: 57px;
+	border-top:0px ;
+  	border-left:0px ;
+ 	border-right:0px ;
+ 	color: white;
+ 	font-size: 32px;
+}
+.tan
+{
+	position: absolute;
+	top:880px;
+	left: 440px;
+	width: 80px;
+	font-size: 36px;
+	font-family:"Î¢ÈíÑÅºÚ";	
+}
+#svg
+{
+	position: absolute;
+	top:300px;
+	left: 210px;
+	width: 220px;
+	
+}
+#end
+{
+	position: absolute;
+	top:300px;
+	left: 210px;
+	width: 220px;
+}
